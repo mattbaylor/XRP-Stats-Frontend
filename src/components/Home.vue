@@ -3,7 +3,7 @@
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-4">XRP Stats</h1>
       <p class="lead">Because everything on the ledger is public information 🎉</p>
-      <p><small>... Or <a href="https://wietse.com/xrpl" target="_blank">check out some more XRPL projects</a>.</small></p>
+      <!--<p><small>... Or <a href="https://wietse.com/xrpl" target="_blank">check out some more XRPL projects</a>.</small></p>-->
     </div>
 
     <div class="card-deck mb-3 text-center">
@@ -12,7 +12,7 @@
           <h4 class="my-0 font-weight-normal">Your Richlist Index</h4>
         </div>
         <div class="card-body">
-          <p>How are you hodling up?</p>
+          <p>How are you holding up?</p>
           <router-link to="/rich-index" class="btn btn-md btn-block btn-outline-primary">Lookup</router-link>
         </div>
       </div>
@@ -41,12 +41,12 @@
         <small>If you want to analyze the data yourself: every ~15 minutes the entire ledger export is saved for you to download 🎉</small>
         <br />
         <small>
-          Accounts (800MB~1.5GB): <a href="https://ledger.exposed/download/latest_account_data.csv">CSV</a> / <a href="https://ledger.exposed/download/latest_account_data.json">JSON</a>
+          Accounts (800MB~1.5GB): <a href="http://xrpl.procoinnews.com/download/latest_account_data.csv">CSV</a> / <a href="http://xrpl.procoinnews.com/download/latest_account_data.json">JSON</a>
           &dash;
-          Escrows (&lt;1MB): <a href="https://ledger.exposed/download/latest_escrow_data.csv">CSV</a> / <a href="https://ledger.exposed/download/latest_escrow_data.json">JSON</a>
+          Escrows (&lt;1MB): <a href="http://xrpl.procoinnews.com/download/latest_escrow_data.csv">CSV</a> / <a href="http://xrpl.procoinnews.com/download/latest_escrow_data.json">JSON</a>
         </small>
       </div>
-      <div class="text-center donate">
+      <div class="text-center donate hidden">
         <span class="text-muted">Feel like sending a sip my way 🍺?</span><br />
         <a amount="0.5" size="275" to="WietseWind" network="twitter" href="https://www.xrptipbot.com" target="_blank"></a>
       </div>
@@ -64,12 +64,14 @@ export default {
   methods: {
   },
   mounted () {
+    /*
     let script = document.createElement('script')
     script.src = 'https://www.xrptipbot.com/static/donate/tipper.js'
     script.setAttribute('charset', 'utf-8')
     script.setAttribute('async', 'async')
     script.setAttribute('deferred', 'deferred')
     document.querySelector('#app').appendChild(script)
+    */
   }
 }
 </script>

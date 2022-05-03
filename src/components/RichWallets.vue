@@ -77,7 +77,7 @@ export default {
     }
   },
   mounted () {
-    window.fetch('https://ledger.exposed/api/wallet-toplist/' + this.take + '/' + this.skip).then((r) => {
+    window.fetch('https://xrpl.procoinnews.com/api/wallet-toplist/' + this.take + '/' + this.skip).then((r) => {
       return r.json()
     }).then((r) => {
       this.data = r
@@ -88,12 +88,14 @@ export default {
       console.log(e)
     })
 
+    /*
     let script = document.createElement('script')
     script.src = 'https://www.xrptipbot.com/static/donate/tipper.js'
     script.setAttribute('charset', 'utf-8')
     script.setAttribute('async', 'async')
     script.setAttribute('deferred', 'deferred')
     document.querySelector('#app').appendChild(script)
+    */
   }
 }
 </script>

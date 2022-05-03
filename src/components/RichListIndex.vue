@@ -89,7 +89,7 @@
         </ul>
         <br />&nbsp;
       </div>
-      <div v-show="!requesting && results.gt" class="donate">
+      <div v-show="!requesting && results.gt" class="donate hidden">
         <div class="text-center donate">
           <span class="text-muted">Feel like sending a sip my way 🍺?</span><br />
           <a amount="0.345" size="275" to="WietseWind" network="twitter" href="https://www.xrptipbot.com" target="_blank"></a>
@@ -142,12 +142,14 @@ export default {
     }
   },
   mounted () {
+    /*
     let script = document.createElement('script')
     script.src = 'https://www.xrptipbot.com/static/donate/tipper.js'
     script.setAttribute('charset', 'utf-8')
     script.setAttribute('async', 'async')
     script.setAttribute('deferred', 'deferred')
     document.querySelector('#app').appendChild(script)
+    */
 
     if (this.$route.params.address) {
       this.account = this.$route.params.address
@@ -181,9 +183,7 @@ export default {
       return new Promise((resolve, reject) => {
         if (typeof window.RippledWs === 'undefined') {
           let pool = new RippledWsClientPool({})
-          pool.addServer('wss://s1.ripple.com')
-          pool.addServer('wss://rippled-dev.xrpayments.co')
-          pool.addServer('wss://rippled.xrptipbot.com')
+          pool.addServer('wss://xrplcluster.com')
           window.RippledWs = new Promise((resolve, reject) => {
             pool.on('ledger', ledger => {
               window.RippledWs = pool
@@ -267,7 +267,7 @@ export default {
           })
         })
         this.requesting = true
-        window.fetch('https://ledger.exposed/api/richlist-index/' + this.account).then(r => {
+        window.fetch('http://xrpl.procoinnews.com/api/richlist-index/' + this.account).then(r => {
           return r.json()
         }).then((r) => {
           // console.log(r)

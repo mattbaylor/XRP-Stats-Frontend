@@ -28,7 +28,7 @@
 
     <footer class="footer">
       <div class="container text-center">
-        <small>
+        <small class="hidden">
           <span class="text-muted">
             By <a href="https://twitter.com/WietseWind" target="_blank">@WietseWind</a> &bull;
             <a href="https://wietse.com/xrpl" target="_blank"><b>More projects</b></a>
@@ -152,5 +152,9 @@ body {
       color: #2079F9;
     }
   }
+}
+
+.hidden {
+  display:none;
 }
 </style>

@@ -116,7 +116,7 @@ export default {
     }
     if (typeof window.RippledWsClientPool === 'undefined') {
       let pool = new RippledWsClientPool({})
-      pool.addServer('wss://s2.ripple.com')
+      pool.addServer('wss://xrplcluster.com')
       window.RippledWsClientPool = pool
     } else {
       if (window.RippledWsClientPool.getConnections().filter(c => {

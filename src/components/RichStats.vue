@@ -132,7 +132,7 @@
     </div>
 
     <div class="text-center" v-show="Object.keys(data).length > 0">
-      <div class="text-center donate">
+      <div class="text-center donate hidden">
         <span class="text-muted">Feel like sending a sip my way 🍺?</span><br />
         <a amount="0.28" size="275" to="WietseWind" network="twitter" href="https://www.xrptipbot.com" target="_blank"></a>
       </div>
@@ -179,12 +179,12 @@ export default {
       })
     },
     noAccountsSum () {
-      return Math.round(Object.keys(this.data.has).map((r) => {
-        return this.data.has[r].balanceSum
-      }).reduce((a, b) => {
-        return a + b
-      }, 0))
-    },
+      return 0 /* Math.round(Object.keys(this.data.has).map((r) => {
+        //return this.data.has[r].balanceSum
+      //}).reduce((a, b) => {
+        //return a + b
+      //}, 0))
+    */ },
     noAccountsASum () {
       return Math.round(Object.keys(this.data.has).map((r) => {
         return this.data.has[r].accounts
@@ -200,25 +200,27 @@ export default {
     }
   },
   mounted () {
+    /*
     let script = document.createElement('script')
     script.src = 'https://www.xrptipbot.com/static/donate/tipper.js'
     script.setAttribute('charset', 'utf-8')
     script.setAttribute('async', 'async')
     script.setAttribute('deferred', 'deferred')
     document.querySelector('#app').appendChild(script)
+    */
 
     this.location.hash = document.location.hash
     if (this.location.hash === '') {
       this.location.hash = '#range'
     }
-    window.fetch('https://ledger.exposed/api/richlist').then((r) => {
+    window.fetch('https://xrpl.procoinnews.com/api/richlist').then((r) => {
       return r.json()
     }).then((r) => {
       this.data = r
     }).catch((e) => {
       console.log(e)
     })
-    window.fetch('https://ledger.exposed/api/wallet-toplist/100/0').then((r) => {
+    window.fetch('https://xrpl.procoinnews.com/api/wallet-toplist/100/0').then((r) => {
       return r.json()
     }).then((r) => {
       this.top100 = r.map(p => {
