@@ -15,7 +15,7 @@
     "moment-timezone": "^0.5.26",
     "rippled-ws-client": "0.0.6",
     "rippled-ws-client-pool": "0.0.2",
-    "vue": "^2.6.10",
+    "vue": "^2.7.14",
     "vue-google-charts": "0.0.3",
     "vue-localforage": "^0.2.5",
     "vue-router": "^3.1.3",
